@@ -43,9 +43,10 @@ public class RegisterPageObject extends BasePage {
         clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
     }
 
-    public void clickNopcomerceImg(WebDriver driver) {
+    public HomePageObject clickNopcomerceImg(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.NOPCOMMERCE_IMG_LINK);
         clickToElement(driver, RegisterPageUI.NOPCOMMERCE_IMG_LINK);
+        return PageGeneratorPageObject.getHomePage(driver);
     }
 
     public String getFirstNameErrorText(WebDriver driver) {
@@ -78,9 +79,10 @@ public class RegisterPageObject extends BasePage {
         return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
     }
 
-    public void clickContinueButton(WebDriver driver) {
+    public HomePageObject clickContinueButton(WebDriver driver) {
         waitForElementClickable(driver, RegisterPageUI.CONTINUE_BUTTON);
         clickToElement(driver, RegisterPageUI.CONTINUE_BUTTON);
+        return PageGeneratorPageObject.getHomePage(driver);
     }
 
     public String getExitEmailValidationMessage(WebDriver driver) {
