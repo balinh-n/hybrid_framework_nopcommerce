@@ -30,8 +30,9 @@ public class HomePageObject extends BasePage {
         clickToElement(driver, HomePageUI.LOGOUT_LINK);
     }
 
-    public void clickToMyAccountLink(WebDriver driver) {
+    public CustomerInfoPageObject clickToMyAccountLink(WebDriver driver) {
         waitForElementClickable(driver, HomePageUI.MYACCOUNT_LINK);
         clickToElement(driver, HomePageUI.MYACCOUNT_LINK);
+        return PageGeneratorPageObject.getCustomerInfoPage(driver);
     }
 }
