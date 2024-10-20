@@ -89,4 +89,81 @@ public class RegisterPageObject extends BasePage {
         waitForElementVisible(driver, RegisterPageUI.EXIST_EMAIL_VALIDATION_MESSAGE);
         return getElementText(driver, RegisterPageUI.EXIST_EMAIL_VALIDATION_MESSAGE);
     }
+
+    public void sendTextToCFirstName(WebDriver driver, String valueText) {
+        waitForElementVisible(driver, RegisterPageUI.CFIRSTNAME_TXT);
+        sendTextToElement(driver, RegisterPageUI.CFIRSTNAME_TXT, valueText);
+    }
+
+    public void sendTextToCLastName(WebDriver driver, String valueText) {
+        waitForElementVisible(driver, RegisterPageUI.CLASTNAME_TXT);
+        sendTextToElement(driver, RegisterPageUI.CLASTNAME_TXT, valueText);
+    }
+
+    public void sendTextToCEmail(WebDriver driver, String valueText) {
+        waitForElementVisible(driver, RegisterPageUI.CEMAIL_TXT);
+        sendTextToElement(driver, RegisterPageUI.CEMAIL_TXT,valueText);
+    }
+
+    public void sendTextToCPassword(WebDriver driver, String valueText) {
+        waitForElementVisible(driver, RegisterPageUI.CPASSWORD_TXT);
+        sendTextToElement(driver, RegisterPageUI.CPASSWORD_TXT,valueText);
+    }
+
+    public void sendTextToCConfirmPassword(WebDriver driver, String valueText) {
+        waitForElementVisible(driver, RegisterPageUI.CCFMPASSWORD_TXT);
+        sendTextToElement(driver, RegisterPageUI.CCFMPASSWORD_TXT,valueText);
+    }
+
+    public void clickCRegisterButton(WebDriver driver) {
+        waitForElementClickable(driver, RegisterPageUI.CREGISTER_BUTTON);
+        clickToElement(driver, RegisterPageUI.CREGISTER_BUTTON);
+    }
+
+    public HomePageObject clickCNopcomerceImg(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CNOPCOMMERCE_IMG_LINK);
+        clickToElement(driver, RegisterPageUI.CNOPCOMMERCE_IMG_LINK);
+        return PageGeneratorPageObject.getHomePage(driver);
+    }
+
+    public String getCFirstNameErrorText(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CFIRSTNAME_ERROR_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CFIRSTNAME_ERROR_MESSAGE);
+    }
+
+    public String getCLastNameErrorText(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CLASTNAME_ERROR_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CLASTNAME_ERROR_MESSAGE);
+    }
+
+    public String getCEmailErrorText(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CEMAIL_ERROR_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CEMAIL_ERROR_MESSAGE);
+    }
+
+    public String getCPasswordErrorText(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CPASSWORD_ERROR_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CPASSWORD_ERROR_MESSAGE);
+    }
+
+    public String getCPasswordValidationErrorMessage(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CPASSWORD_VALIDATION_ERROR_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CPASSWORD_VALIDATION_ERROR_MESSAGE);
+    }
+
+    public String getCRegisterSuccessMessage(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CREGISTER_SUCCESS_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CREGISTER_SUCCESS_MESSAGE);
+    }
+
+    public HomePageObject clickCContinueButton(WebDriver driver) {
+        waitForElementClickable(driver, RegisterPageUI.CCONTINUE_BUTTON);
+        clickToElement(driver, RegisterPageUI.CCONTINUE_BUTTON);
+        return PageGeneratorPageObject.getHomePage(driver);
+    }
+
+    public String getCExitEmailValidationMessage(WebDriver driver) {
+        waitForElementVisible(driver, RegisterPageUI.CEXIST_EMAIL_VALIDATION_MESSAGE);
+        return getElementText(driver, RegisterPageUI.CEXIST_EMAIL_VALIDATION_MESSAGE);
+    }
 }

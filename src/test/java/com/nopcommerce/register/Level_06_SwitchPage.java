@@ -28,7 +28,7 @@ public class Level_06_SwitchPage extends BaseTest {
     private CustomerInfoPageObject customerInfoPage;
     private AddressPageObject addressPage;
     private OrderPageObject orderPage;
-    private RewardPointPageObject rewardPoitPage;
+    private RewardPointPageObject rewardPointPage;
 
     @BeforeClass
     public void beforeMethod() {
@@ -58,7 +58,8 @@ public class Level_06_SwitchPage extends BaseTest {
         customerInfoPage = homePage.clickToMyAccountLink(driver);
         addressPage = customerInfoPage.openAddressPage(driver);
         orderPage = addressPage.openOrderPage(driver);
-        rewardPoitPage = orderPage.openRewardPointPage(driver);
+        rewardPointPage = orderPage.openRewardPointPage(driver);
+        customerInfoPage = rewardPointPage.openCustomerInfoPage(driver);
     }
 
     @AfterClass

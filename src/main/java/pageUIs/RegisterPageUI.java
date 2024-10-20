@@ -20,4 +20,22 @@ public class RegisterPageUI {
 
     public static final String REGISTER_SUCCESS_MESSAGE = "//div[@class='result']";
     public static final String CONTINUE_BUTTON = "//a[@class='button-1 register-continue-button']";
+
+    public static final String CFIRSTNAME_TXT = "id=FirstName";
+    public static final String CLASTNAME_TXT = "id=LastName";
+    public static final String CEMAIL_TXT = "id=Email";
+    public static final String CPASSWORD_TXT = "id=Password";
+    public static final String CCFMPASSWORD_TXT = "id=ConfirmPassword";
+    public static final String CREGISTER_BUTTON = "id='register-button";
+    public static final String CNOPCOMMERCE_IMG_LINK = "xpath=//img[@alt='Your store name']";
+
+    public static final String CFIRSTNAME_ERROR_MESSAGE = "id=FirstName-error";
+    public static final String CLASTNAME_ERROR_MESSAGE = "id=LastName-error";
+    public static final String CEMAIL_ERROR_MESSAGE = "id=Email-error";
+    public static final String CEXIST_EMAIL_VALIDATION_MESSAGE = "xpath=//div[@class='message-error validation-summary-errors']//li";
+    public static final String CPASSWORD_ERROR_MESSAGE = "id=ConfirmPassword-error";
+    public static final String CPASSWORD_VALIDATION_ERROR_MESSAGE = "xpath=//span[@data-valmsg-for='Password']";
+
+    public static final String CREGISTER_SUCCESS_MESSAGE = "class=result";
+    public static final String CCONTINUE_BUTTON = "xpath=//a[@class='button-1 register-continue-button']";
 }

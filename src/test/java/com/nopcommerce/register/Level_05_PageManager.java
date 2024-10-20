@@ -81,7 +81,6 @@ public class Level_05_PageManager extends BaseTest{
         homePage = registerPage.clickNopcomerceImg(driver);
         registerPage = homePage.clickToRegisterLink(driver);
 
-        registerPage = new RegisterPageObject(driver);
         registerPage.sendTextToFirstName(driver, "jack");
         registerPage.sendTextToLastName(driver, "sparrow");
         registerPage.sendTextToEmail(driver, "abcd@gmail.com");

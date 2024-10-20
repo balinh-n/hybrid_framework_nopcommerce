@@ -35,4 +35,27 @@ public class HomePageObject extends BasePage {
         clickToElement(driver, HomePageUI.MYACCOUNT_LINK);
         return PageGeneratorPageObject.getCustomerInfoPage(driver);
     }
+
+    public RegisterPageObject clickToCRegisterLink(WebDriver driver) {
+        waitForElementClickable(driver, HomePageUI.CREGISTER_LINK);
+        clickToElement(driver, HomePageUI.CREGISTER_LINK);
+        return PageGeneratorPageObject.getRegisterPage(driver);
+    }
+
+    public LoginPageObject clickToCLogInLink(WebDriver driver) {
+        waitForElementClickable(driver, HomePageUI.CLOGIN_LINK);
+        clickToElement(driver, HomePageUI.CLOGIN_LINK);
+        return PageGeneratorPageObject.getLoginPage(driver);
+    }
+
+    public void clickToCLogOutLink(WebDriver driver) {
+        waitForElementClickable(driver, HomePageUI.CLOGOUT_LINK);
+        clickToElement(driver, HomePageUI.CLOGOUT_LINK);
+    }
+
+    public CustomerInfoPageObject clickToCMyAccountLink(WebDriver driver) {
+        waitForElementClickable(driver, HomePageUI.CMYACCOUNT_LINK);
+        clickToElement(driver, HomePageUI.CMYACCOUNT_LINK);
+        return PageGeneratorPageObject.getCustomerInfoPage(driver);
+    }
 }

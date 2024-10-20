@@ -124,36 +124,36 @@ public class BasePage {
         return driver.manage().getCookies();
     }
 
-    // public By getByLocator(String locatorType) {
-    //     By by = null;
-    //     if (locatorType.startsWith("xpath") || locatorType.startsWith("XPath") || locatorType.startsWith("XPATH")) {
-    //         by = By.xpath(locatorType.substring(6));
-    //     } else if (locatorType.startsWith("css") || locatorType.startsWith("Css") || locatorType.startsWith("CSS")) {
-    //         by = By.cssSelector(locatorType.substring(4));
-    //     } else if (locatorType.startsWith("id") || locatorType.startsWith("Id") || locatorType.startsWith("ID")) {
-    //         by = By.id(locatorType.substring(3));
-    //     } else if (locatorType.startsWith("name") || locatorType.startsWith("Name") || locatorType.startsWith("NAME")) {
-    //         by = By.name(locatorType.substring(5));
-    //     } else if (locatorType.startsWith("class") || locatorType.startsWith("Class")
-    //             || locatorType.startsWith("CLASS")) {
-    //         by = By.className(locatorType.substring(6));
-    //     } else if (locatorType.startsWith("tagname") || locatorType.startsWith("Tagname")
-    //             || locatorType.startsWith("TAGNAME")) {
-    //         by = By.tagName(locatorType.substring(8));
-    //     } else {
-    //         throw new RuntimeException("Locator is not valid.");
-    //     }
-    //     return by;
-    // }
-    public By getByLocator(String locator) {
-        return By.xpath(locator);
+    public By getByDiffLocator(String locatorType) {
+        By by = null;
+        if (locatorType.startsWith("xpath") || locatorType.startsWith("XPath") || locatorType.startsWith("XPATH")) {
+            by = By.xpath(locatorType.substring(6));
+        } else if (locatorType.startsWith("css") || locatorType.startsWith("Css") || locatorType.startsWith("CSS")) {
+            by = By.cssSelector(locatorType.substring(4));
+        } else if (locatorType.startsWith("id") || locatorType.startsWith("Id") || locatorType.startsWith("ID")) {
+            by = By.id(locatorType.substring(3));
+        } else if (locatorType.startsWith("name") || locatorType.startsWith("Name") || locatorType.startsWith("NAME")) {
+            by = By.name(locatorType.substring(5));
+        } else if (locatorType.startsWith("class") || locatorType.startsWith("Class")
+                || locatorType.startsWith("CLASS")) {
+            by = By.className(locatorType.substring(6));
+        } else if (locatorType.startsWith("tagname") || locatorType.startsWith("Tagname")
+                || locatorType.startsWith("TAGNAME")) {
+            by = By.tagName(locatorType.substring(8));
+        } else {
+            throw new RuntimeException("Locator is not valid.");
+        }
+        return by;
     }
+    // public By getByLocator(String locator) {
+    //     return By.xpath(locator);
+    // }
     public WebElement getWebElement(WebDriver driver, String locator) {
-        return driver.findElement(getByLocator(locator));
+        return driver.findElement(getByDiffLocator(locator));
     }
 
     public List<WebElement> getWebElements(WebDriver driver, String locator) {
-        return driver.findElements(getByLocator(locator));
+        return driver.findElements(getByDiffLocator(locator));
     }
 
     public void clickToElement(WebDriver driver, String locator) {
@@ -182,7 +182,7 @@ public class BasePage {
         sleepInSecond(2000);
 
         List<WebElement> dropdownItems = new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childLocator)));
+                .until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByDiffLocator(childLocator)));
         for (WebElement dropdownItem : dropdownItems) {
             if (dropdownItem.getText().trim().equals(expectedItem)) {
                 dropdownItem.click();
@@ -339,7 +339,7 @@ public class BasePage {
 
     public void waitForElementVisible(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
+                .until(ExpectedConditions.visibilityOfElementLocated(getByDiffLocator(locator)));
     }
 
     public void waitForListElementVisible(WebDriver driver, String locator) {
@@ -349,7 +349,7 @@ public class BasePage {
 
     public void waitForElementInVisible(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
+                .until(ExpectedConditions.invisibilityOfElementLocated(getByDiffLocator(locator)));
     }
 
     public void waitForListElementInVisible(WebDriver driver, String locator) {
@@ -359,12 +359,12 @@ public class BasePage {
 
     public void waitForElementClickable(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
+                .until(ExpectedConditions.elementToBeClickable(getByDiffLocator(locator)));
     }
 
     public void waitForElementSelected(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
-                .until(ExpectedConditions.elementToBeSelected(getByLocator(locator)));
+                .until(ExpectedConditions.elementToBeSelected(getByDiffLocator(locator)));
     }
 
 }
