@@ -1,4 +1,5 @@
 package com.nopcommerce.register;
+
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,11 +9,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import pageObjects.HomePageObject;
 import pageObjects.PageGeneratorPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_07_RefactorLocator extends BaseTest{
+public class Level_07_RefactorLocator extends BaseTest {
 
     WebDriver driver;
     String email = getRandomText() + "@gmail.com";
@@ -26,7 +28,7 @@ public class Level_07_RefactorLocator extends BaseTest{
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
-        driver.get("https://localhost:5001/");
+        driver.get(GlobalConstants.USER_URL);
         homePage = PageGeneratorPageObject.getHomePage(driver);
     }
 

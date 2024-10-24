@@ -28,12 +28,12 @@ public class Level_02_BasePage_Init extends BasePage {
         basePage.clickToElement(driver, "//a[@class='ico-register']");
         basePage.clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(basePage.getElementText(driver, "//span[@id='FirstName-error']"),
+        Assert.assertEquals(basePage.getTextOfElement(driver, "//span[@id='FirstName-error']"),
                 "First name is required.");
-        Assert.assertEquals(basePage.getElementText(driver, "//span[@id='LastName-error']"),
+        Assert.assertEquals(basePage.getTextOfElement(driver, "//span[@id='LastName-error']"),
                 "Last name is required.");
-        Assert.assertEquals(basePage.getElementText(driver, "//span[@id='Email-error']"), "Email is required.");
-        Assert.assertEquals(basePage.getElementText(driver, "//span[@id='ConfirmPassword-error']"),
+        Assert.assertEquals(basePage.getTextOfElement(driver, "//span[@id='Email-error']"), "Email is required.");
+        Assert.assertEquals(basePage.getTextOfElement(driver, "//span[@id='ConfirmPassword-error']"),
                 "Password is required.");
     }
 
@@ -46,7 +46,7 @@ public class Level_02_BasePage_Init extends BasePage {
         basePage.sendTextToElement(driver,"//input[@id='Password']","abcd1234@");
         basePage.sendTextToElement(driver, "//input[@id='ConfirmPassword']","abcd1234@");
         basePage.clickToElement(driver,"//button[@id='register-button']");
-        Assert.assertEquals(basePage.getElementText(driver,"//span[@id='Email-error']"),
+        Assert.assertEquals(basePage.getTextOfElement(driver,"//span[@id='Email-error']"),
                 "Please enter a valid email address.");
     }
 
@@ -59,7 +59,7 @@ public class Level_02_BasePage_Init extends BasePage {
         basePage.sendTextToElement(driver,"//input[@id='Password']","abc");
         basePage.sendTextToElement(driver, "//input[@id='ConfirmPassword']","abc");
         basePage.clickToElement(driver,"//button[@id='register-button']");
-        Assert.assertEquals(basePage.getElementText(driver,"//span[@data-valmsg-for='Password']"),
+        Assert.assertEquals(basePage.getTextOfElement(driver,"//span[@data-valmsg-for='Password']"),
                 "<p>must meet the following rules: </p><ul><li>must have at least 6 characters and not greater than 64 characters</li></ul>");
     }
 

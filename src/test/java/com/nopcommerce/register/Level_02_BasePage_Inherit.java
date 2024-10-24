@@ -25,12 +25,12 @@ public class Level_02_BasePage_Inherit extends BasePage {
         clickToElement(driver, "//a[@class='ico-register']");
         clickToElement(driver, "//button[@id='register-button']");
 
-        Assert.assertEquals(getElementText(driver, "//span[@id='FirstName-error']"),
+        Assert.assertEquals(getTextOfElement(driver, "//span[@id='FirstName-error']"),
                 "First name is required.");
-        Assert.assertEquals(getElementText(driver, "//span[@id='LastName-error']"),
+        Assert.assertEquals(getTextOfElement(driver, "//span[@id='LastName-error']"),
                 "Last name is required.");
-        Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Email is required.");
-        Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"),
+        Assert.assertEquals(getTextOfElement(driver, "//span[@id='Email-error']"), "Email is required.");
+        Assert.assertEquals(getTextOfElement(driver, "//span[@id='ConfirmPassword-error']"),
                 "Password is required.");
     }
 
@@ -43,7 +43,7 @@ public class Level_02_BasePage_Inherit extends BasePage {
         sendTextToElement(driver,"//input[@id='Password']","abcd1234@");
         sendTextToElement(driver, "//input[@id='ConfirmPassword']","abcd1234@");
         clickToElement(driver,"//button[@id='register-button']");
-        Assert.assertEquals(getElementText(driver,"//span[@id='Email-error']"),
+        Assert.assertEquals(getTextOfElement(driver,"//span[@id='Email-error']"),
                 "Please enter a valid email address.");
     }
 
@@ -56,7 +56,7 @@ public class Level_02_BasePage_Inherit extends BasePage {
         sendTextToElement(driver,"//input[@id='Password']","abc");
         sendTextToElement(driver, "//input[@id='ConfirmPassword']","abc");
         clickToElement(driver,"//button[@id='register-button']");
-        Assert.assertEquals(getElementText(driver,"//span[@data-valmsg-for='Password']"),
+        Assert.assertEquals(getTextOfElement(driver,"//span[@data-valmsg-for='Password']"),
                 "<p>must meet the following rules: </p><ul><li>must have at least 6 characters and not greater than 64 characters</li></ul>");
     }
 

@@ -51,32 +51,32 @@ public class RegisterPageObject extends BasePage {
 
     public String getFirstNameErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.FIRSTNAME_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.FIRSTNAME_ERROR_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.FIRSTNAME_ERROR_MESSAGE);
     }
 
     public String getLastNameErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.LASTNAME_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.LASTNAME_ERROR_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.LASTNAME_ERROR_MESSAGE);
     }
 
     public String getEmailErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.EMAIL_ERROR_MESSAGE);
     }
 
     public String getPasswordErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.PASSWORD_ERROR_MESSAGE);
     }
 
     public String getPasswordValidationErrorMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.PASSWORD_VALIDATION_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.PASSWORD_VALIDATION_ERROR_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.PASSWORD_VALIDATION_ERROR_MESSAGE);
     }
 
     public String getRegisterSuccessMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
-        return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
     }
 
     public HomePageObject clickContinueButton(WebDriver driver) {
@@ -87,7 +87,7 @@ public class RegisterPageObject extends BasePage {
 
     public String getExitEmailValidationMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.EXIST_EMAIL_VALIDATION_MESSAGE);
-        return getElementText(driver, RegisterPageUI.EXIST_EMAIL_VALIDATION_MESSAGE);
+        return getTextOfElement(driver, RegisterPageUI.EXIST_EMAIL_VALIDATION_MESSAGE);
     }
 
     public void sendTextToCFirstName(WebDriver driver, String valueText) {
@@ -128,32 +128,32 @@ public class RegisterPageObject extends BasePage {
 
     public String getCFirstNameErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CFIRSTNAME_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CFIRSTNAME_ERROR_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CFIRSTNAME_ERROR_MESSAGE);
     }
 
     public String getCLastNameErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CLASTNAME_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CLASTNAME_ERROR_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CLASTNAME_ERROR_MESSAGE);
     }
 
     public String getCEmailErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CEMAIL_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CEMAIL_ERROR_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CEMAIL_ERROR_MESSAGE);
     }
 
     public String getCPasswordErrorText(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CPASSWORD_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CPASSWORD_ERROR_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CPASSWORD_ERROR_MESSAGE);
     }
 
     public String getCPasswordValidationErrorMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CPASSWORD_VALIDATION_ERROR_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CPASSWORD_VALIDATION_ERROR_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CPASSWORD_VALIDATION_ERROR_MESSAGE);
     }
 
     public String getCRegisterSuccessMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CREGISTER_SUCCESS_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CREGISTER_SUCCESS_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CREGISTER_SUCCESS_MESSAGE);
     }
 
     public HomePageObject clickCContinueButton(WebDriver driver) {
@@ -164,6 +164,6 @@ public class RegisterPageObject extends BasePage {
 
     public String getCExitEmailValidationMessage(WebDriver driver) {
         waitForElementVisible(driver, RegisterPageUI.CEXIST_EMAIL_VALIDATION_MESSAGE);
-        return getElementText(driver, RegisterPageUI.CEXIST_EMAIL_VALIDATION_MESSAGE);
+        return getTextOfDifferentElement(driver, RegisterPageUI.CEXIST_EMAIL_VALIDATION_MESSAGE);
     }
 }
