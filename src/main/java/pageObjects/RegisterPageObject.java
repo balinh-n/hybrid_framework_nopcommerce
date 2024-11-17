@@ -46,7 +46,13 @@ public class RegisterPageObject extends BasePage {
     public HomePageObject clickImageLink() {
         waitForElementClickable(driver, RegisterPageUI.IMG_LINK);
         clickToElement(driver, RegisterPageUI.IMG_LINK);
-        return PageGenerateManager.getHomePageObject(driver);
+        return PageGenerateManager.getHomePage(driver);
+    }
+
+    public HomePageObject clickContinueLink() {
+        waitForElementClickable(driver, RegisterPageUI.CONTINUE_LINK);
+        clickToElement(driver, RegisterPageUI.CONTINUE_LINK);
+        return PageGenerateManager.getHomePage(driver);
     }
 
     public String getFirstNameError() {
@@ -67,5 +73,13 @@ public class RegisterPageObject extends BasePage {
 
     public String getPasswordValidation() {
         return getTextOfElement(driver, RegisterPageUI.PASSWORD_VALIDATION_ERROR);
+    }
+
+    public String getEmailValidation() {
+        return getTextOfElement(driver, RegisterPageUI.EMAIL_VALIDATION);
+    }
+
+    public String getSuccessMessage() {
+        return getTextOfElement(driver, RegisterPageUI.REGISTER_SUCCESSFULL_MESSAGE);
     }
 }

@@ -9,6 +9,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseTest {
+    private String email;
+    private String password;
 
     public WebDriver getBrowserDriver(WebDriver driver, String browserName) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -27,7 +29,23 @@ public class BaseTest {
         return driver;
     }
 
-    public String getRandomText() {
-        return RandomStringUtils.randomAlphanumeric(6);
+    public String getEmail() {
+        return email;
+    }
+
+    public String setEmail(int number) {
+        return this.email = getRandomText(number) + "@gmail.com";
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String setPassword(int number) {
+        return this.password = getRandomText(number);
+    }
+
+    public String getRandomText(int number) {
+        return RandomStringUtils.randomAlphanumeric(number);
     }
 }
