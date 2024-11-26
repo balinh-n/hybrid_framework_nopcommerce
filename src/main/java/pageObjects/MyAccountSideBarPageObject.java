@@ -17,4 +17,9 @@ public class MyAccountSideBarPageObject extends BasePage{
         clickToElement(driver, MyAccountSideBarPageUI.CUSTOMERINFO_LINK);
         return PageGenerateManager.getCustomerInfoPage(driver);
     }
+
+    public void name(String pageName) {
+        clickToElement(driver, stringFormat(MyAccountSideBarPageUI.formatElement, pageName));
+        
+    }
 }

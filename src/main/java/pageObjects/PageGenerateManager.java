@@ -19,4 +19,12 @@ public class PageGenerateManager {
     public static CustomerInfoPageObject getCustomerInfoPage(WebDriver driver) {
         return new CustomerInfoPageObject(driver);
     }
+
+    public static RewardPointPageObject getRewardPointPage(WebDriver driver) {
+        return new RewardPointPageObject(driver);
+    }
+
+    public static DynamicPageObject getDynamicPage(WebDriver driver) {
+        return new DynamicPageObject(driver);
+    }
 }
